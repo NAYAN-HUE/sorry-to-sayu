@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorry, Sayu!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffebf0;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+        h1 {
+            color: #ff6b81;
+            margin-top: 40px;
+        }
+        p {
+            font-size: 22px;
+            color: #333;
+        }
+        .sorry-btn {
+            background-color: #ff6b81;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .sorry-btn:hover {
+            background-color: #ff4b61;
+        }
+        .sorry-words {
+            font-size: 30px;
+            color: #ff477e;
+            margin-top: 20px;
+            animation: bounce 1s infinite alternate;
+        }
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+        #message {
+            margin-top: 30px;
+            font-size: 24px;
+            color: #ff477e;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>I'm Really Sorry, Sayu! 😔</h1>
+    <p>Hey Sayu, it’s me, your Nishchu. I didn’t mean to upset you... Can you forgive me?</p>
+    <p>I’ll say "Sorry" as many times as you want, just for you!</p>
+
+    <button class="sorry-btn" onclick="showSorry()">Click for More Apologies!</button>
+
+    <div id="sorryDiv" style="margin-top: 30px;">
+        <!-- Repeated Sorry will show here -->
+    </div>
+
+    <div id="message">
+        ❤️ Nishchu loves Sayu, and I'm REALLY sorry ❤️
+    </div>
+
+    <script>
+        let count = 0;
+        const sorryDiv = document.getElementById('sorryDiv');
+        
+        function showSorry() {
+            count++;
+            const sorryWord = document.createElement('div');
+            sorryWord.classList.add('sorry-words');
+            sorryWord.innerText = 'Sorry ' + count + ' times, Sayu!';
+            sorryDiv.appendChild(sorryWord);
+
+            if (count >= 5) {
+                document.getElementById('message').style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>
